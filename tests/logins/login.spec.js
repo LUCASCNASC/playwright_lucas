@@ -24,9 +24,11 @@ test('First Login and leave', async ({ page }) => {
   await page.getByRole('button', { name: 'Prosseguir' }).click();
 
   //clicar em Olá, Lucas,
-  await page.locator('span:text("Lucas Camargo do Nascimento")').click();
+  await page.locator('span.menu-user-name:text("Lucas Camargo do Nascimento")').click();
+
+  //esperar até o elemento Sair ficar visível
+  await page.waitForSelector('a[title="Sair"]', { state: 'visible' })
 
   //clicar para sair da conta
   await page.locator('a[title="Sair"]').click();
-  
 });
