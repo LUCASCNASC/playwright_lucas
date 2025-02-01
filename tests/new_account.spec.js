@@ -1,17 +1,14 @@
 import { test, expect } from '@playwright/test';
 import { generateFirstName } from '../utils/generated_data'
 
-
-
-test('test', async ({ page }) => {
-  await page.goto('https://signup.heroku.com/');
-  await page.getByRole('button', { name: 'Accept all cookies' }).click();
-  await page.fill('#first_name', generateFirstName )
-  // await page.fill('#last_name', 'Camargo')
-  // await page.fill('#email', 'lucascnteste@gmail.com')
-  // await page.fill('#company', 'Camargo LTDA')
-  // await page.selectOption('#self_declared_country', { value: 'Brazil' })
-  // await page.check('#receive_newsletter_choice')
-  // await page.click('#signup-button')
-  // await page.getByRole('heading', { name: 'Almost there …' }).click();
+test.skip('create new account', async ({ page }) => {
+  await page.goto('https://app.phptravels.com/signup');
+  await page.fill('#first_name', 'Lucas' )
+  await page.fill('#last_name', 'Camargo' )
+  await page.fill('#email', 'lucascnteste@gmail.com' )
+  await page.fill('#password', 'lucas1998@testando' )
+  //await page.selectOption('#country_id', { value: 'Brazil +55' }) //ajustar
+  await page.fill('#mobile', '449858574930' )
+  //resolver reCAPTCHA
+  //await page.click('#submit')
 });
