@@ -3,8 +3,7 @@ const { login } = require('../utils/commands');
 
 test('New Order', async ({ page }) => {
     await page.goto('https://app.phptravels.com/user-login');
-    await login (page, 'Login');
-
+    await login (page, 'Login'); //login
     await page.click('button', 'Orders') //clicar em Orders
     await page.click('a:has-text("New order")') //clicar em New Order
     await page.isVisible('p.m-0.page_title:has-text("New Order")') //título New Order está visível na tela
@@ -13,8 +12,7 @@ test('New Order', async ({ page }) => {
 
 test('All Orders', async ({ page }) => {
     await page.goto('https://app.phptravels.com/user-login');
-    await login (page, 'Login');
-
+    await login (page, 'Login'); //login
     await page.click('button', 'Orders') //clicar em Orders
     await page.click('a:has-text("All orders")') //clicar em New Order
     await page.isVisible('p.m-0.page_title:has-text("All Orders")') //título New Order está visível na tela

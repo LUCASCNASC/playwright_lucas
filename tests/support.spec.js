@@ -3,7 +3,7 @@ const { login } = require('../utils/commands');
 
 test('All Tickets', async ({ page }) => {
     await page.goto('https://app.phptravels.com/user-login');
-    await login (page, 'Login');
+    await login (page, 'Login'); //login
     await page.locator('button:has-text("Support")').click()
     await page.click('a:has-text("All Tickets")') //clicar em All Tickets
     await page.isVisible('p.m-0.page_title:has-text("Support Tickets")') //título New Order está visível na tela
@@ -12,7 +12,7 @@ test('All Tickets', async ({ page }) => {
 
 test('Open New Ticke', async ({ page }) => {
     await page.goto('https://app.phptravels.com/user-login');
-    await login (page, 'Login');
+    await login (page, 'Login'); //login
     await page.locator('button:has-text("Support")').click()
     await page.click('a:has-text("Open New Ticket")') //clicar em All Tickets
     await page.isVisible('p.m-0.page_title:has-text("Submit Ticket")') //título New Order está visível na tela
@@ -21,7 +21,7 @@ test('Open New Ticke', async ({ page }) => {
 
 test.skip('Create New Ticket', async ({ page }) => {
     await page.goto('https://app.phptravels.com/user-login');
-    await login (page, 'Login');
+    await login (page, 'Login'); //login
     await page.locator('button:has-text("Support")').click()
     await page.click('a:has-text("Open New Ticket")') //clicar em All Tickets
     await page.isVisible('p.m-0.page_title:has-text("Create New Ticket")') //título New Order está visível na tela
